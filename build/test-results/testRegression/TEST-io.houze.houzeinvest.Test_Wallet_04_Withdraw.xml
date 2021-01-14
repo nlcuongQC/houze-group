@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.houze.houzeinvest.Test_Wallet_04_Withdraw" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-01-14T07:10:44" hostname="LAPTOP-RIANQ4LQ" time="41.823">
+  <properties/>
+  <testcase name="TC_01_Withdraw_With_Blank_Form" classname="io.houze.houzeinvest.Test_Wallet_04_Withdraw" time="0.019"/>
+  <testcase name="TC_02_Withdraw_Without_Choosing_Bank" classname="io.houze.houzeinvest.Test_Wallet_04_Withdraw" time="0.174"/>
+  <testcase name="TC_03_Withdraw_Larger_Than_Current" classname="io.houze.houzeinvest.Test_Wallet_04_Withdraw" time="1.599"/>
+  <testcase name="TC_04_Withdraw_Valid_Data" classname="io.houze.houzeinvest.Test_Wallet_04_Withdraw" time="36.771"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 45264
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jan 14, 2021 2:10:28 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

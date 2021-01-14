@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Houze Invest - Wallet]">
+  <listeners>
+    <listener class-name="commons.MethodListener"/>
+    <listener class-name="reportconfig.AllureTestListener"/>
+  </listeners>
+  <test thread-count="5" verbose="0" name="Withdraw function(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://integration-houze-invest.houze.io/"/>
+    <classes>
+      <class name="io.houze.houzeinvest.Test_Wallet_04_Withdraw">
+        <methods>
+          <include name="afterClass"/>
+          <include name="TC_04_Withdraw_Valid_Data"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- io.houze.houzeinvest.Test_Wallet_04_Withdraw -->
+    </classes>
+  </test> <!-- Withdraw function(failed) -->
+</suite> <!-- Failed suite [Houze Invest - Wallet] -->

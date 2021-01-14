@@ -1,0 +1,142 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "io.houze.houzeinvest",
+    "children" : [ {
+      "name" : "Test_Invest_01_Invest",
+      "children" : [ {
+        "name" : "TC_01_Invest_Without_Login",
+        "uid" : "54b2befde371f640",
+        "parentUid" : "40f231ede46e33a1091ef25d0b34739b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610600325500,
+          "stop" : 1610600328007,
+          "duration" : 2507
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome", "https://integration-houze-invest.houze.io/" ]
+      }, {
+        "name" : "TC_02_Invest_With_Login",
+        "uid" : "a7a652fe503f004c",
+        "parentUid" : "40f231ede46e33a1091ef25d0b34739b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610600328739,
+          "stop" : 1610600348713,
+          "duration" : 19974
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome", "https://integration-houze-invest.houze.io/" ]
+      } ],
+      "uid" : "40f231ede46e33a1091ef25d0b34739b"
+    }, {
+      "name" : "Test_Wallet_02_Delete_Bank",
+      "children" : [ {
+        "name" : "TC_01_Click_Back_In_Delete_Form",
+        "uid" : "668543f633e9dfde",
+        "parentUid" : "caa9394fe7034870a4dee0aea79c32c7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610600428340,
+          "stop" : 1610600439121,
+          "duration" : 10781
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
+      }, {
+        "name" : "TC_02_Click_Back_In_Delete_Form",
+        "uid" : "1caccb6711c02ea3",
+        "parentUid" : "caa9394fe7034870a4dee0aea79c32c7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610600440369,
+          "stop" : 1610600451232,
+          "duration" : 10863
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
+      } ],
+      "uid" : "caa9394fe7034870a4dee0aea79c32c7"
+    }, {
+      "name" : "Test_Wallet_01_Create_Bank",
+      "children" : [ {
+        "name" : "TC_01_Create_With_Blank_Form",
+        "uid" : "71461bceebfd9bad",
+        "parentUid" : "4a998deda4ecc6a83a96fb905fc510ef",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610600471641,
+          "stop" : 1610600471677,
+          "duration" : 36
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
+      }, {
+        "name" : "TC_02_Create_With_Wrong_OTP",
+        "uid" : "1f33f0cc25d3f5dc",
+        "parentUid" : "4a998deda4ecc6a83a96fb905fc510ef",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610600472792,
+          "stop" : 1610600474347,
+          "duration" : 1555
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
+      }, {
+        "name" : "TC_03_Create_With_Valid_OTP",
+        "uid" : "5b59d2437323cd1e",
+        "parentUid" : "4a998deda4ecc6a83a96fb905fc510ef",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610600475838,
+          "stop" : 1610600488691,
+          "duration" : 12853
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
+      } ],
+      "uid" : "4a998deda4ecc6a83a96fb905fc510ef"
+    }, {
+      "name" : "Test_Wallet_03_Deposit",
+      "children" : [ {
+        "name" : "TC_01_Deposit_With_Blank_Form",
+        "uid" : "d6a8e9e94d60622a",
+        "parentUid" : "91eb6ea7fbf120b1f47b8105b8cf3d40",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610600508689,
+          "stop" : 1610600509004,
+          "duration" : 315
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
+      }, {
+        "name" : "TC_02_Deposit_With_Valid_Data",
+        "uid" : "4885a7ad40b558c8",
+        "parentUid" : "91eb6ea7fbf120b1f47b8105b8cf3d40",
+        "status" : "broken",
+        "time" : {
+          "start" : 1610600520031,
+          "stop" : 1610600520031,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
+      } ],
+      "uid" : "91eb6ea7fbf120b1f47b8105b8cf3d40"
+    } ],
+    "uid" : "io.houze.houzeinvest"
+  } ]
+}

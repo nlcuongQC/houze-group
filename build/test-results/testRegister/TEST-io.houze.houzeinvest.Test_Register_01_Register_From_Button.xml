@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.houze.houzeinvest.Test_Register_01_Register_From_Button" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-12-17T03:43:24" hostname="LAPTOP-RIANQ4LQ" time="37.538">
+  <properties/>
+  <testcase name="TC_01_Register_With_Blank[0](public void io.houze.houzeinvest.Test_Register_01_Register_From_Button.TC_01_Register_With_Blank(java.lang.reflect.Method))" classname="io.houze.houzeinvest.Test_Register_01_Register_From_Button" time="0.88"/>
+  <testcase name="TC_02_Register_With_Invalid_Phone[0](public void io.houze.houzeinvest.Test_Register_01_Register_From_Button.TC_02_Register_With_Invalid_Phone(java.lang.reflect.Method))" classname="io.houze.houzeinvest.Test_Register_01_Register_From_Button" time="4.684"/>
+  <testcase name="TC_03_Register_With_Duplicated_Phone[0](public void io.houze.houzeinvest.Test_Register_01_Register_From_Button.TC_03_Register_With_Duplicated_Phone(java.lang.reflect.Method))" classname="io.houze.houzeinvest.Test_Register_01_Register_From_Button" time="4.472"/>
+  <testcase name="TC_04_Register_With_Invalid_Email[0](public void io.houze.houzeinvest.Test_Register_01_Register_From_Button.TC_04_Register_With_Invalid_Email(java.lang.reflect.Method))" classname="io.houze.houzeinvest.Test_Register_01_Register_From_Button" time="4.357"/>
+  <testcase name="TC_05_Register_With_Duplicated_Email[0](public void io.houze.houzeinvest.Test_Register_01_Register_From_Button.TC_05_Register_With_Duplicated_Email(java.lang.reflect.Method))" classname="io.houze.houzeinvest.Test_Register_01_Register_From_Button" time="4.376"/>
+  <testcase name="TC_06_Register_With_Unchecked_Condition[0](public void io.houze.houzeinvest.Test_Register_01_Register_From_Button.TC_06_Register_With_Unchecked_Condition(java.lang.reflect.Method))" classname="io.houze.houzeinvest.Test_Register_01_Register_From_Button" time="3.797"/>
+  <testcase name="TC_07_Register_With_Wrong_OTP[0](public void io.houze.houzeinvest.Test_Register_01_Register_From_Button.TC_07_Register_With_Wrong_OTP(java.lang.reflect.Method))" classname="io.houze.houzeinvest.Test_Register_01_Register_From_Button" time="6.062"/>
+  <testcase name="TC_08_Register_With_Valid_OTP[0](public void io.houze.houzeinvest.Test_Register_01_Register_From_Button.TC_08_Register_With_Valid_OTP(java.lang.reflect.Method))" classname="io.houze.houzeinvest.Test_Register_01_Register_From_Button" time="5.277"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 47203
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Dec 17, 2020 10:43:17 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

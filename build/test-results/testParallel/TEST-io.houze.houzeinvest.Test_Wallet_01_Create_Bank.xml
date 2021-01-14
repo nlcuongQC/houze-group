@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.houze.houzeinvest.Test_Wallet_01_Create_Bank" tests="3" skipped="3" failures="0" errors="0" timestamp="2021-01-07T09:26:12" hostname="LAPTOP-RIANQ4LQ" time="0.013">
+  <properties/>
+  <testcase name="TC_01_Create_With_Blank_Form" classname="io.houze.houzeinvest.Test_Wallet_01_Create_Bank" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="TC_02_Create_With_Wrong_OTP" classname="io.houze.houzeinvest.Test_Wallet_01_Create_Bank" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="TC_03_Create_With_Valid_OTP" classname="io.houze.houzeinvest.Test_Wallet_01_Create_Bank" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.houze.houzeinvest.Test_Account_01_EKYC" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-21T09:31:54" hostname="LAPTOP-RIANQ4LQ" time="65.885">
+  <properties/>
+  <testcase name="TC_01_Verify_With_Blank_Form" classname="io.houze.houzeinvest.Test_Account_01_EKYC" time="0.754"/>
+  <testcase name="TC_02_Verify_With_ID_Card" classname="io.houze.houzeinvest.Test_Account_01_EKYC" time="21.594"/>
+  <testcase name="TC_03_Verify_With_Passport" classname="io.houze.houzeinvest.Test_Account_01_EKYC" time="40.165"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 31621
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Dec 21, 2020 4:31:42 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

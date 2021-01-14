@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Houze Invest - Profile" parallel="tests" thread-count="4">
+    <listeners>
+        <listener class-name="commons.MethodListener"/>
+        <listener class-name="reportconfig.AllureTestListener"/>
+    </listeners>
+
+    <test name="Update profile function">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://integration-houze-invest.houze.io/"/>
+        <classes>
+            <class name="io.houze.houzeinvest.Common_01_Register"/>
+            <class name="io.houze.houzeinvest.Test_Profile_02_Update"/>
+        </classes>
+    </test>
+</suite>

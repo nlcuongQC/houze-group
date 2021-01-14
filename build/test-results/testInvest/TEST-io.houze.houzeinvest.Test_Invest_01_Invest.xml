@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.houze.houzeinvest.Test_Invest_01_Invest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-01-14T04:58:00" hostname="LAPTOP-RIANQ4LQ" time="22.915">
+  <properties/>
+  <testcase name="TC_01_Invest_Without_Login" classname="io.houze.houzeinvest.Test_Invest_01_Invest" time="2.234"/>
+  <testcase name="TC_02_Invest_With_Login" classname="io.houze.houzeinvest.Test_Invest_01_Invest" time="20.047"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 29520
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jan 14, 2021 11:57:53 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

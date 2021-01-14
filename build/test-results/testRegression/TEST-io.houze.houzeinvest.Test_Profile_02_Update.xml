@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.houze.houzeinvest.Test_Profile_02_Update" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-01-14T07:12:17" hostname="LAPTOP-RIANQ4LQ" time="127.476">
+  <properties/>
+  <testcase name="TC_01_Update_With_No_Changes" classname="io.houze.houzeinvest.Test_Profile_02_Update" time="10.189"/>
+  <testcase name="TC_02_Update_Avatar_And_Cancel" classname="io.houze.houzeinvest.Test_Profile_02_Update" time="20.357"/>
+  <testcase name="TC_03_Update_Avatar" classname="io.houze.houzeinvest.Test_Profile_02_Update" time="10.304"/>
+  <testcase name="TC_04_Update_Email_And_Cancel" classname="io.houze.houzeinvest.Test_Profile_02_Update" time="10.406"/>
+  <testcase name="TC_05_Update_Email" classname="io.houze.houzeinvest.Test_Profile_02_Update" time="10.954"/>
+  <testcase name="TC_06_Update_Avatar_And_Email" classname="io.houze.houzeinvest.Test_Profile_02_Update" time="10.585"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 47236
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jan 14, 2021 2:11:52 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

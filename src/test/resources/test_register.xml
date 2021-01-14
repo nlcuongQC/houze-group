@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Houze Invest">
+    <listeners>
+        <listener class-name="reportconfig.AllureTestListener"/>
+    </listeners>
+
+    <test name="Houze Invest - Register function">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://integration-houze-invest.houze.io/"/>
+        <classes>
+            <class name="io.houze.houzeinvest.Test_Register_01_Register_From_Button"/>
+        </classes>
+    </test>
+</suite>

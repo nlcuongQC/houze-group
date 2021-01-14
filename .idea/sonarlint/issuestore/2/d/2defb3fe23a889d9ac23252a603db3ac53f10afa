@@ -1,0 +1,7 @@
+
+n
+java:S1128	"LRemove this unused import 'org.springframework.core.convert.TypeDescriptor'.(å•ÛŠüÿÿÿÿ8¥þŽøï.
+d
+java:S1126ä"AReplace this if-then-else statement by a single return statement.(õ¥è„ûÿÿÿÿ8€–Œ·í.
+d
+java:S1126×"AReplace this if-then-else statement by a single return statement.(õ¥è„ûÿÿÿÿ8€–Œ·í.

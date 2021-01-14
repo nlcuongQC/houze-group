@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Houze Invest - Wallet">
+    <listeners>
+        <listener class-name="reportconfig.AllureTestListener"/>
+    </listeners>
+
+    <test name="Delete Bank function">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://integration-houze-invest.houze.io/"/>
+        <classes>
+            <class name="io.houze.houzeinvest.Common_01_Register"/>
+            <class name="io.houze.houzeinvest.Common_02_Verify_With_EKYC"/>
+            <class name="io.houze.houzeinvest.Common_03_Create_Bank"/>
+            <class name="io.houze.houzeinvest.Test_Wallet_02_Delete_Bank"/>
+        </classes>
+    </test>
+</suite>

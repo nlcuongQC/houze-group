@@ -1,0 +1,91 @@
+[ {
+  "uid" : "54b2befde371f640",
+  "name" : "Invest 01: Without login",
+  "time" : {
+    "start" : 1610600325500,
+    "stop" : 1610600328007,
+    "duration" : 2507
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "1f33f0cc25d3f5dc",
+  "name" : "Create Bank 02: Create bank wrong OTP",
+  "time" : {
+    "start" : 1610600472792,
+    "stop" : 1610600474347,
+    "duration" : 1555
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "1caccb6711c02ea3",
+  "name" : "Delete Bank 02: Delete bank",
+  "time" : {
+    "start" : 1610600440369,
+    "stop" : 1610600451232,
+    "duration" : 10863
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d6a8e9e94d60622a",
+  "name" : "Deposit 01: Deposit with blank form",
+  "time" : {
+    "start" : 1610600508689,
+    "stop" : 1610600509004,
+    "duration" : 315
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "668543f633e9dfde",
+  "name" : "Delete Bank 01: Click back",
+  "time" : {
+    "start" : 1610600428340,
+    "stop" : 1610600439121,
+    "duration" : 10781
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a7a652fe503f004c",
+  "name" : "Invest 02: With Login",
+  "time" : {
+    "start" : 1610600328739,
+    "stop" : 1610600348713,
+    "duration" : 19974
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "71461bceebfd9bad",
+  "name" : "Create Bank 01: Create with blank form",
+  "time" : {
+    "start" : 1610600471641,
+    "stop" : 1610600471677,
+    "duration" : 36
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5b59d2437323cd1e",
+  "name" : "Create Bank 03: Create bank valid data",
+  "time" : {
+    "start" : 1610600475838,
+    "stop" : 1610600488691,
+    "duration" : 12853
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "4885a7ad40b558c8",
+  "name" : "Deposit 02: Deposit with valid data",
+  "time" : {
+    "start" : 1610600520031,
+    "stop" : 1610600520031,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "critical"
+} ]
