@@ -60,6 +60,16 @@ public class Functions {
         }
     }
 
+    public String getUpperCase(String text) {
+        StringBuilder result = new StringBuilder();
+        char          upperCaseChar;
+        for (int i = 0; i < text.length(); i++) {
+            upperCaseChar = text.charAt(i);
+            result.append(Character.isUpperCase(upperCaseChar) ? upperCaseChar + "" : "");
+        }
+        return String.valueOf(result);
+    }
+
     @Attachment(value = "Failed step screenshot: ", type = "image/png")
     public byte[] saveScreenshot() {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);

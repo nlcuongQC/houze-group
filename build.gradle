@@ -194,6 +194,13 @@ task testTradingBuy(type: Test, dependsOn: 'deleteReport') {
     }
 }
 
+task testTradingSell(type: Test, dependsOn: 'deleteReport') {
+    useTestNG() {
+        useDefaultListeners = false
+        suites 'src/test/resources/test_trading_02_post_sell.xml'
+    }
+}
+
 task testParallel(type: Test, dependsOn: 'deleteReport') {
     useTestNG() {
         useDefaultListeners = false

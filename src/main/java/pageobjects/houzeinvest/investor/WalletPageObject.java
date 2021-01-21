@@ -94,7 +94,7 @@ public class WalletPageObject extends AbstractPage {
     @Step("Click to Create Deposit Order button")
     public WalletPageObject clickToCreateDepositOrderBtn() {
         waitElementClickable(driver, CREATE_DEPOSIT_ORDER_BTN);
-        clickToElement(driver, CREATE_DEPOSIT_ORDER_BTN);
+        clickToElementByJS(driver, CREATE_DEPOSIT_ORDER_BTN);
         return this;
     }
 
@@ -225,10 +225,16 @@ public class WalletPageObject extends AbstractPage {
         verifyCreateDepositOrderBtnIsDisabled();
         inputToDepositTxtbx(amount);
         selectDepositBank(bankName);
+        verifyCreateDepositOrderBtnIsEnabled();
         clickToCreateDepositOrderBtn();
         verifyDepostitPopupIsDisplayed();
         verifyBankAccountNameDepositPopupEqualTo(bankName);
         verifyBankAccountAmountDepositPopupEqualTo(convertMoneyAmount(amount));
+    }
+
+    private void verifyCreateDepositOrderBtnIsEnabled() {
+        waitElementVisible(driver, CREATE_DEPOSIT_ORDER_BTN);
+        verify.verifyTrue(isElementEnabled(driver, CREATE_DEPOSIT_ORDER_BTN));
     }
 
     @Step("Input Withdraw amount: {amount}")

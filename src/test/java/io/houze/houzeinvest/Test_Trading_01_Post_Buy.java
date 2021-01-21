@@ -11,12 +11,13 @@ import pageobjects.houzeinvest.investor.TradingPageObject;
 
 import static commons.PageGeneratorManager.HouzeInvest.*;
 
-@Epic("Account")
-@Feature("Profile")
-@Story("Update")
+@Epic("Trading")
+@Feature("Post")
+@Story("Buy")
 public class Test_Trading_01_Post_Buy extends AbstractTest {
     WebDriver  driver;
     DataHelper data;
+    String project;
 
     BasePageObject       basePage;
     TradingPageObject    tradingPage;
@@ -26,6 +27,7 @@ public class Test_Trading_01_Post_Buy extends AbstractTest {
     @BeforeClass(groups = "smoke", description = "Login with a verified account")
     public void beforeClass(String browserName, String appUrl) {
         data = DataHelper.getData();
+        project = "Economix";
 
         driver   = getBrowserDriver(browserName, appUrl);
         basePage = getBasePageObject(driver);
@@ -35,7 +37,7 @@ public class Test_Trading_01_Post_Buy extends AbstractTest {
                 .verifyLoginButtonIsDisappeared();
     }
 
-    @BeforeMethod(description = "Open ")
+    @BeforeMethod(description = "Open Trading Buy page")
     public void beforeMethod() {
         tradingPage = getTradingPage(driver);
         tradingPage.navigateToPage()
@@ -83,7 +85,7 @@ public class Test_Trading_01_Post_Buy extends AbstractTest {
     }
 
     @Severity(SeverityLevel.CRITICAL)
-    @Test(description = "Post Buy 04: Post buy without price")
+    @Test(description = "Post Buy 04: Post buy with valid data")
     public void TC_04_Post_Buy_With_Valid_Data() {
         tradingBuyPage = getTradingBuyPage(driver);
         tradingBuyPage.choosePrj("Economix")

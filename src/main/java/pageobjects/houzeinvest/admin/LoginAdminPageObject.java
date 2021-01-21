@@ -41,8 +41,11 @@ public class LoginAdminPageObject extends AbstractPage {
 
     @Step("Login to Admin")
     public void loginToAdmin() {
-        inputToUsernameTextbox(GlobalConstants.USERNAME_ADMIN_HI);
-        inputToPasswordTextbox(GlobalConstants.PASSWORD_ADMIN_HI);
-        clickToLoginButton();
+        boolean flag = isElementDisplayed(driver, LoginAdminPageUI.USERNAME_TEXTBOX);
+        if (flag) {
+            inputToUsernameTextbox(GlobalConstants.USERNAME_ADMIN_HI);
+            inputToPasswordTextbox(GlobalConstants.PASSWORD_ADMIN_HI);
+            clickToLoginButton();
+        }
     }
 }

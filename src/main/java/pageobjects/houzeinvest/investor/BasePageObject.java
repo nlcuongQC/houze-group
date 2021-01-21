@@ -154,11 +154,16 @@ public class BasePageObject extends AbstractPage {
 
     @Step("Login to account {phone} with {password}")
     public BasePageObject loginToAnAccount(String phone, String password) {
-        PageGeneratorManager.HouzeInvest.getBasePageObject(driver);
-        clickToLoginButton();
-        inputToPhoneTextbox(phone);
-        inputToPasswordTextbox(password);
-        clickToSubmitLoginButton();
+        boolean flag = isElementDisplayed(driver, LOGIN_BUTTON);
+        if (flag) {
+            PageGeneratorManager.HouzeInvest.getBasePageObject(driver);
+            clickToLoginButton();
+            inputToPhoneTextbox(phone);
+            inputToPasswordTextbox(password);
+            clickToSubmitLoginButton();
+            verifyAlertMessageEqualTo("Đăng nhập thành công");
+            verifyLoginButtonIsDisappeared();
+        }
         return this;
     }
 

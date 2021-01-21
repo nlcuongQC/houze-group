@@ -1,7 +1,13 @@
+io/houze/houzeinvest/Test_Trading_02_Post_Sell.java
+ io.houze.houzeinvest.Test_Trading_02_Post_Sell
 io/houze/houzeinvest/Test_Wallet_03_Deposit.java
  io.houze.houzeinvest.Test_Wallet_03_Deposit
+io/houze/houzeinvest/Common_08_Success_Project.java
+ io.houze.houzeinvest.Common_08_Success_Project
 io/houze/houzeinvest/Common_03_Create_Bank.java
  io.houze.houzeinvest.Common_03_Create_Bank
+io/houze/houzeinvest/Common_05_Create_Project.java
+ io.houze.houzeinvest.Common_05_Create_Project
 io/houze/houzeinvest/Test_Invest_01_Invest.java
  io.houze.houzeinvest.Test_Invest_01_Invest
 io/houze/houzeinvest/Test_Register_01_Register_From_Button.java
@@ -12,6 +18,8 @@ io/houze/houzeinvest/Test_Wallet_01_Create_Bank.java
  io.houze.houzeinvest.Test_Wallet_01_Create_Bank
 io/houze/houzeinvest/Test_Wallet_04_Withdraw.java
  io.houze.houzeinvest.Test_Wallet_04_Withdraw
+io/houze/houzeinvest/Common_07_Invest.java
+ io.houze.houzeinvest.Common_07_Invest
 io/houze/houzeinvest/Common_01_Register.java
  io.houze.houzeinvest.Common_01_Register
 io/houze/houzeinvest/Test_Profile_01_EKYC.java
@@ -26,5 +34,7 @@ io/houze/houzeinvest/Common_02_Verify_With_EKYC.java
  io.houze.houzeinvest.Common_02_Verify_With_EKYC
 io/houze/houzeinvest/Common_04_Deposit.java
  io.houze.houzeinvest.Common_04_Deposit
+io/houze/houzeinvest/Common_06_Approve_Project.java
+ io.houze.houzeinvest.Common_06_Approve_Project
 io/houze/houzeinvest/Test_Trading_01_Post_Buy.java
  io.houze.houzeinvest.Test_Trading_01_Post_Buy

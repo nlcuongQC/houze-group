@@ -53,9 +53,7 @@ public class Common_02_Verify_With_EKYC extends AbstractTest {
         address             = data.getAddress();
         fullAddress         = data.getAddress();
 
-        basePage.loginToAnAccount(Common_01_Register.phone, Common_01_Register.password)
-                .verifyAlertMessageEqualTo("Đăng nhập thành công")
-                .verifyLoginButtonIsDisappeared();
+        basePage.loginToAnAccount(Common_01_Register.phone, Common_01_Register.password);
 
         accountPage = getAccountPageObject(driver);
         accountPage.navigateToPage().clickToVerifyButton();

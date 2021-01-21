@@ -53,6 +53,10 @@ public class DataHelper {
         return String.valueOf(faker.random().nextInt(999999));
     }
 
+    public String getNumber(int count) {
+        return String.valueOf(faker.random().nextInt(count));
+    }
+
     public String getBirthday(String pattern) {
         Date date = faker.date().birthday();
 //        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -64,6 +68,10 @@ public class DataHelper {
         Date date = faker.date().birthday();
         DateFormat dateFormat = new SimpleDateFormat("MMMM");
         return dateFormat.format(date);
+    }
+
+    public String getCode() {
+        return faker.code().isbn13();
     }
 
     public String getAddress() {

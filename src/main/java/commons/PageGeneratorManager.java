@@ -70,6 +70,18 @@ public class PageGeneratorManager {
         public static TradingBuyPageObject getTradingBuyPage(WebDriver driver) {
             return new TradingBuyPageObject(driver);
         }
+
+        public static TradingSellPageObject getTradingSellPage(WebDriver driver) {
+            return new TradingSellPageObject(driver);
+        }
+
+        public static PropertyPageObject getPropertyPage(WebDriver driver) {
+            return new PropertyPageObject(driver);
+        }
+
+        public static PropertyDetailPageObject getPropertyDetailPage(WebDriver driver) {
+            return new PropertyDetailPageObject(driver);
+        }
     }
 
     public static class Houze {

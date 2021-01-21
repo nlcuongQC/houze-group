@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.core.convert.TypeDescriptor;
+
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -327,6 +327,15 @@ public abstract class AbstractPage {
         } catch (NoSuchElementException e) {
             e.printStackTrace();
             return false;
+        } catch (StaleElementReferenceException e) {
+            elements = finds(driver, xpathValue);
+            boolean status = true;
+            for (WebElement item : elements) {
+                if (!item.isDisplayed()) {
+                    status = false;
+                }
+            }
+            return status;
         }
     }
 
@@ -443,6 +452,11 @@ public abstract class AbstractPage {
         js.executeScript("arguments[0].click();", find(driver, xpathValue));
     }
 
+    protected void clickToElementByJS(WebDriver driver, String xpathValue, String values) {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", find(driver, castToObject(xpathValue, values)));
+    }
+
     protected void clickToElementByJS(WebDriver driver, WebElement element) {
         js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
@@ -458,7 +472,13 @@ public abstract class AbstractPage {
         js.executeScript("arguments[0].setAttribute('value', '" + attributeName + "')", find(driver, xpathValue));
     }
 
-    protected void  sendkeyToElementByJS(WebDriver driver, WebElement element, String attributeName) {
+    protected void sendkeyToElementByJS(WebDriver driver, String xpathValue, String attributeName, String... values) {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value', '" + attributeName + "')",
+                         find(driver, castToObject(xpathValue, values)));
+    }
+
+    protected void sendkeyToElementByJS(WebDriver driver, WebElement element, String attributeName) {
         js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('value', '" + attributeName + "')", element);
     }
@@ -468,16 +488,28 @@ public abstract class AbstractPage {
         js.executeScript("arguments[0].removeAttribute('" + attributeName + "');", find(driver, xpathValue));
     }
 
+    protected void removeAttributeInDOM(WebDriver driver, String xpathValue, String attributeName, String... values) {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].removeAttribute('" + attributeName + "');",
+                         find(driver, castToObject(xpathValue, values)));
+    }
+
     protected void setAttributeValue(WebDriver driver, String xpathValue, String attributeName, String value) {
         js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('" + attributeName + "', '" + value + "');",
                          find(driver, xpathValue));
     }
 
-    protected void setAttributeValue(WebDriver driver, WebElement element, String attributeName, String value) {
+    protected void setAttributeValue(WebDriver driver, String xpathValue, String attributeName, String value,
+                                     String values) {
         js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('" + attributeName + "', '" + value + "');",
-                         element);
+                         find(driver, castToObject(xpathValue, values)));
+    }
+
+    protected void setAttributeValue(WebDriver driver, WebElement element, String attributeName, String value) {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('" + attributeName + "', '" + value + "');", element);
     }
 
     protected boolean isImageLoaded(WebDriver driver, String xpathValue) {
@@ -597,8 +629,15 @@ public abstract class AbstractPage {
     }
 
     protected void waitTextElementVisible(WebDriver driver, String xpathValue, String text) {
-        wait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(byXpath(xpathValue), text));
+        try {
+            wait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+            overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
+            wait.until(ExpectedConditions.textToBePresentInElementLocated(byXpath(xpathValue), text));
+            overrideGlobalTimeout(driver, GlobalConstants.LONG_TIMEOUT);
+        } catch (TimeoutException e) {
+            functions = Functions.getFunctions(driver);
+            functions.saveScreenshot();
+        }
     }
 
     protected void waitTextElementChanged(WebDriver driver, String xpathValue, String text) {
@@ -646,6 +685,15 @@ public abstract class AbstractPage {
         Collections.sort(sortedElementTextList);
         Collections.reverse(sortedElementTextList);
         return sortedElementTextList.equals(elementTextList);
+    }
+
+    protected void uploadMultipleFile(WebDriver driver, String... fileName) {
+        StringBuilder fullFileName = new StringBuilder();
+        for (String file: fileName) {
+            fullFileName = fullFileName.append(GlobalConstants.UPLOAD_FOLDER).append(file).append("\n");
+        }
+        fullFileName = new StringBuilder(fullFileName.toString().trim());
+        sendkeyToElement(driver, AbstractPageUI.UPLOAD_FILE_TYPE, fullFileName.toString());
     }
 
     protected void uploadFile(WebDriver driver, String xpathValue, String fileName) {
