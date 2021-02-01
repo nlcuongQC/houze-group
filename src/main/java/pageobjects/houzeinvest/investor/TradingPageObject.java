@@ -35,14 +35,20 @@ public class TradingPageObject extends AbstractPage {
 
     @Step("Verify Post button text is: {0}")
     public TradingPageObject verifyPostBtnTxtIsChangedTo(String txt) {
-        waitTextElementVisible(driver, POST_BTN, txt);
-        verify.verifyEquals(getElementText(driver, POST_BTN), txt);
+        waitTextElementVisible(driver, DYNAMIC_POST_BTN, txt);
+        verify.verifyTrue(isElementDisplayed(driver, DYNAMIC_POST_BTN, txt));
         return this;
     }
 
     @Step("Click Post button")
     public void clickToPostBtn() {
-        waitElementClickable(driver, POST_BTN);
-        clickToElement(driver, POST_BTN);
+        waitElementClickable(driver, DYNAMIC_POST_BTN, "Mua");
+        clickToElement(driver, DYNAMIC_POST_BTN, "Mua");
+    }
+
+    @Step("Click Buy now button of project {0}")
+    public void clickToDynamicBuyNowBtn(String prjName) {
+        waitElementClickable(driver, DYNAMIC_BUY_NOW_BTN, prjName);
+        clickToElement(driver, DYNAMIC_BUY_NOW_BTN, prjName);
     }
 }

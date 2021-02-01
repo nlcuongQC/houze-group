@@ -112,10 +112,10 @@ public class Test_Wallet_04_Withdraw extends AbstractTest {
                   .verifyWithdrawProcessingAmountEqualTo(withdrawAmount)
                   .verifyTotalBalance();
 
-        loginAdminPage = getLoginAdminPageObject(driver);
+        loginAdminPage = getLoginAdminPage(driver);
         loginAdminPage.navigateToPage().loginToAdmin();
 
-        baseAdminPage = getBaseAdminPageObject(driver);
+        baseAdminPage = getBaseAdminPage(driver);
         baseAdminPage.clickToNotificationButton().clickToTransactionLink();
 
         transactionOrderPage = getTransactionOrderPage(driver);

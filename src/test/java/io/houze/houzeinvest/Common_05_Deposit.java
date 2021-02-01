@@ -13,7 +13,7 @@ import pageobjects.houzeinvest.investor.WalletPageObject;
 
 import static commons.PageGeneratorManager.HouzeInvest.*;
 
-public class Common_04_Deposit extends AbstractTest {
+public class Common_05_Deposit extends AbstractTest {
     public static String amount, bankName;
     WebDriver  driver;
     DataHelper data;
@@ -35,10 +35,10 @@ public class Common_04_Deposit extends AbstractTest {
         walletPage = getWalletPage(driver);
         walletPage.navigateToPage().createDepositOrder(bankName, amount);
 
-        loginAdminPage = getLoginAdminPageObject(driver);
+        loginAdminPage = getLoginAdminPage(driver);
         loginAdminPage.navigateToPage();
 
-        baseAdminPage = getBaseAdminPageObject(driver);
+        baseAdminPage = getBaseAdminPage(driver);
         baseAdminPage.clickToNotificationButton().clickToTransactionLink();
 
         transactionOrderPage = getTransactionOrderPage(driver);

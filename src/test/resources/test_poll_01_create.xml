@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Houze Invest - Poll">
+    <listeners>
+        <listener class-name="commons.MethodListener"/>
+        <listener class-name="reportconfig.AllureTestListener"/>
+    </listeners>
+
+    <test name="Poll - Create function">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://integration-houze-invest.houze.io/"/>
+        <classes>
+            <class name="io.houze.houzeinvest.Common_14_Create_Approved_Project"/>
+            <class name="io.houze.houzeinvest.Test_Poll_01_Create"/>
+        </classes>
+    </test>
+</suite>

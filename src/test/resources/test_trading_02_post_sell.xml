@@ -11,12 +11,12 @@
         <parameter name="url" value="https://integration-houze-invest.houze.io/"/>
         <classes>
             <class name="io.houze.houzeinvest.Common_01_Register"/>
-            <class name="io.houze.houzeinvest.Common_02_Verify_With_EKYC"/>
-            <class name="io.houze.houzeinvest.Common_04_Deposit"/>
-            <class name="io.houze.houzeinvest.Common_05_Create_Project"/>
-            <class name="io.houze.houzeinvest.Common_06_Approve_Project"/>
-            <class name="io.houze.houzeinvest.Common_07_Invest"/>
-            <class name="io.houze.houzeinvest.Common_08_Success_Project"/>
+            <class name="io.houze.houzeinvest.Common_03_Verify_With_EKYC"/>
+            <class name="io.houze.houzeinvest.Common_05_Deposit"/>
+            <class name="io.houze.houzeinvest.Common_06_Create_Project"/>
+            <class name="io.houze.houzeinvest.Common_07_Approve_Project"/>
+            <class name="io.houze.houzeinvest.Common_08_Invest"/>
+            <class name="io.houze.houzeinvest.Common_09_Success_Project"/>
             <class name="io.houze.houzeinvest.Test_Trading_02_Post_Sell" />
         </classes>
     </test>

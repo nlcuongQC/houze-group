@@ -4,139 +4,35 @@
   "children" : [ {
     "name" : "LAPTOP-RIANQ4LQ",
     "children" : [ {
-      "name" : "25348@LAPTOP-RIANQ4LQ.Test worker(12)",
+      "name" : "8832@LAPTOP-RIANQ4LQ.Test worker(12)",
       "children" : [ {
-        "name" : "Delete Bank 01: Click back",
-        "uid" : "668543f633e9dfde",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "passed",
+        "name" : "TC_01_Create_Poll_With_Valid_Data",
+        "uid" : "ae07a55a4e2a5601",
+        "parentUid" : "72f4e422ddbfad02372e4419c75644e6",
+        "status" : "skipped",
         "time" : {
-          "start" : 1610600428340,
-          "stop" : 1610600439121,
-          "duration" : 10781
+          "start" : 1612154511386,
+          "stop" : 1612154511387,
+          "duration" : 1
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
       }, {
-        "name" : "Deposit 01: Deposit with blank form",
-        "uid" : "d6a8e9e94d60622a",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1610600508689,
-          "stop" : 1610600509004,
-          "duration" : 315
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
-      }, {
-        "name" : "Deposit 02: Deposit with valid data",
-        "uid" : "4885a7ad40b558c8",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
+        "name" : "Create approved project",
+        "uid" : "971adaf26577e1a2",
+        "parentUid" : "72f4e422ddbfad02372e4419c75644e6",
         "status" : "broken",
         "time" : {
-          "start" : 1610600520031,
-          "stop" : 1610600520031,
-          "duration" : 0
+          "start" : 1612154511245,
+          "stop" : 1612154511247,
+          "duration" : 2
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
-      }, {
-        "name" : "Create Bank 01: Create with blank form",
-        "uid" : "71461bceebfd9bad",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1610600471641,
-          "stop" : 1610600471677,
-          "duration" : 36
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
-      }, {
-        "name" : "Create Bank 02: Create bank wrong OTP",
-        "uid" : "1f33f0cc25d3f5dc",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1610600472792,
-          "stop" : 1610600474347,
-          "duration" : 1555
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
-      }, {
-        "name" : "Create Bank 03: Create bank valid data",
-        "uid" : "5b59d2437323cd1e",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1610600475838,
-          "stop" : 1610600488691,
-          "duration" : 12853
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
-      }, {
-        "name" : "Invest 01: Without login",
-        "uid" : "54b2befde371f640",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1610600325500,
-          "stop" : 1610600328007,
-          "duration" : 2507
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "chrome", "https://integration-houze-invest.houze.io/" ]
-      }, {
-        "name" : "Delete Bank 02: Delete bank",
-        "uid" : "1caccb6711c02ea3",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1610600440369,
-          "stop" : 1610600451232,
-          "duration" : 10863
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
-      }, {
-        "name" : "Deposit 02: Deposit with valid data",
-        "uid" : "9e5af0d96c14fe3b",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "broken",
-        "time" : {
-          "start" : 1610600509937,
-          "stop" : 1610600519947,
-          "duration" : 10010
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "headless", "https://integration-houze-invest.houze.io/" ]
-      }, {
-        "name" : "Invest 02: With Login",
-        "uid" : "a7a652fe503f004c",
-        "parentUid" : "8b067460212f9920f21bd6769ef47a9e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1610600328739,
-          "stop" : 1610600348713,
-          "duration" : 19974
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "chrome", "https://integration-houze-invest.houze.io/" ]
       } ],
-      "uid" : "8b067460212f9920f21bd6769ef47a9e"
+      "uid" : "72f4e422ddbfad02372e4419c75644e6"
     } ],
     "uid" : "a5ae5b459a6bdba997e38606e4a3570d"
   } ]

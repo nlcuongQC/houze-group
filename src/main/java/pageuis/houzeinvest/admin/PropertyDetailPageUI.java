@@ -19,4 +19,6 @@ public class PropertyDetailPageUI {
     public static final String IMAGES                = "//div[@class = 'jr-tabs-classic']//li//img";
     public static final String SUCCESS_PRJ_BTN       = "//span[text() = 'Gọi vốn thành công']/parent::button";
     public static final String FINISH_PRJ_BTN        = "//span[text() = 'Dự án đã hoàn thành']/parent::button";
+    public static final String AVATAR_BTN            = "//div[contains(@class, 'avatar')]/button";
+    public static final String AVATAR_IMG            = "//div[@class = 'jr-profile-banner-avatar']//img";
 }

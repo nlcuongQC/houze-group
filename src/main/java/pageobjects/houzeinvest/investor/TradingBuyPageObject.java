@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 import static pageuis.houzeinvest.investor.TradingBuyPageUI.*;
+import static pageuis.houzeinvest.investor.TradingSellPageUI.TITLE;
 
 public class TradingBuyPageObject extends AbstractPage {
     WebDriver    driver;
@@ -17,9 +18,10 @@ public class TradingBuyPageObject extends AbstractPage {
     }
 
     @Step("Verify Trading buy page is opened")
-    public void verifyTradingBuyPageIsOpened() {
+    public TradingBuyPageObject verifyTradingBuyPageIsOpened() {
         waitElementVisible(driver, TITLE);
-        verify.verifyTrue(isElementDisplayed(driver, TITLE));
+        verify.verifyEquals(getElementText(driver, TITLE), "Đăng tin Mua");
+        return this;
     }
 
     @Step("Choose project: {0}")
@@ -32,7 +34,7 @@ public class TradingBuyPageObject extends AbstractPage {
     @Step("Choose item type: {0}")
     public TradingBuyPageObject chooseItemType(String itemTypeName) {
         waitElementClickable(driver, ITEM_TYPE_DDL_PARENT);
-        selectItemsInCustomDropdown(driver, ITEM_TYPE_DDL_PARENT, DDL_ITEMS, itemTypeName);
+        selectItemsInCustomDropdownByJs(driver, ITEM_TYPE_DDL_PARENT, DDL_ITEMS, itemTypeName);
         return this;
     }
 
@@ -71,5 +73,15 @@ public class TradingBuyPageObject extends AbstractPage {
     @Step("Verify {0} popup is displayed")
     public void verifyDynamicPopupIsDisplayed(String result) {
         verify.verifyTrue(isElementDisplayed(driver, DYNAMIC_POPUP, result));
+    }
+
+    @Step("Post buy")
+    public void postBuy(String prjName, String itemType, String amount, String price) {
+        choosePrj(prjName);
+        chooseItemType(itemType);
+        inputToItemAmountTxtbx(amount);
+        inputToExpectedPrice(price);
+        clickToCreatePostBuyBtn();
+        verifyDynamicPopupIsDisplayed("thành công");
     }
 }

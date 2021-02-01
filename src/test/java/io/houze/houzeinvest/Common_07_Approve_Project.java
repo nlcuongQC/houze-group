@@ -11,7 +11,7 @@ import pageobjects.houzeinvest.admin.PropertyDetailPageObject;
 
 import static commons.PageGeneratorManager.HouzeInvest.getPropertyDetailPage;
 
-public class Common_06_Approve_Project extends AbstractTest {
+public class Common_07_Approve_Project extends AbstractTest {
     WebDriver driver;
     String    prjName;
     DataHelper data;
@@ -22,11 +22,11 @@ public class Common_06_Approve_Project extends AbstractTest {
     @Parameters({"browser", "url"})
     @BeforeTest(groups = "smoke", description = "Create a property")
     public void beforeTest(String browserName, String appUrl) {
-        driver    = Common_05_Create_Project.driver;
+        driver    = Common_06_Create_Project.driver;
         data      = DataHelper.getData();
         functions = Functions.getFunctions(driver);
 
-        prjName = Common_05_Create_Project.prjName;
+        prjName = Common_06_Create_Project.prjName;
 
         propertyDetailPage = getPropertyDetailPage(driver);
         propertyDetailPage.acceptPrj()

@@ -3,6 +3,7 @@ package pageobjects.houzeinvest.admin;
 import commons.AbstractPage;
 import commons.VerifyHelper;
 import io.qameta.allure.Step;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import static pageuis.houzeinvest.admin.PropertyPageUI.*;
@@ -44,8 +45,8 @@ public class PropertyPageObject extends AbstractPage {
         inputToDynamicCreatePropertyTxtbx("total_investment", "5000000000");
         inputToDynamicCreatePropertyTxtbx("quantity", "2000");
         chooseDynamicDate("start_datetime", "1");
-        chooseDynamicDate("end_datetime", "28");
-        chooseDynamicDate("complete_datetime", "30");
+        chooseDynamicDate("end_datetime", "20");
+        chooseDynamicDate("complete_datetime", "25");
         clickSubmitBtn();
         return this;
     }
@@ -53,7 +54,9 @@ public class PropertyPageObject extends AbstractPage {
     @Step("Choose {date} with day {day}")
     private void chooseDynamicDate(String date, String day) {
         clickToElementByJS(driver, DYNAMIC_CREATE_PROPERTY_TXTBX, date);
+        waitElementClickable(driver, DYNAMIC_DATE_PICKER_DAY, day);
         clickToElement(driver, DYNAMIC_DATE_PICKER_DAY, day);
+        waitElementClickable(driver, DATE_PICKER_SUBMIT);
         clickToElement(driver, DATE_PICKER_SUBMIT);
     }
 
@@ -65,13 +68,15 @@ public class PropertyPageObject extends AbstractPage {
 
     @Step("Choose combobox {comboboxName} with value {value}")
     public void chooseDynamicCombobox(String comboboxName, String value) {
+        waitElementVisible(driver, DYNAMIC_COMBOBOX, comboboxName);
         sendkeyToElement(driver, DYNAMIC_COMBOBOX, value, comboboxName);
-        clickToElement(driver, DYNAMIC_COMBOBOX_ITEMS, value);
+        waitElementVisible(driver, DYNAMIC_COMBOBOX_ITEMS, value);
+        clickToElementByJS(driver, DYNAMIC_COMBOBOX_ITEMS, value);
     }
 
     @Step("Choose Product type {0}")
     public void chooseProductType(String type) {
-        selectItemsInCustomDropdown(driver, PRODUCT_TYPE_DDL_PARENT, PRODUCT_TYPE_DDL_ITEMS, type);
+        selectItemsInCustomDropdownByJs(driver, PRODUCT_TYPE_DDL_PARENT, PRODUCT_TYPE_DDL_ITEMS, type);
     }
 
     @Step("Input {value} to {txtbxName} field")

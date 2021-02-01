@@ -1,119 +1,25 @@
 {
-  "3bf06ad323b722cab30f9abd78cf3a85" : {
+  "59bbc64d500488652207e05c2f7c518f" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
+      "skipped" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "54b2befde371f640",
-      "status" : "passed",
+      "uid" : "ae07a55a4e2a5601",
+      "status" : "skipped",
+      "statusDetails" : "element click intercepted: Element <button class=\"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary\" tabindex=\"0\" type=\"submit\">...</button> is not clickable at point (1144, 660). Other element would receive the click: <div aria-hidden=\"true\" style=\"z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;\"></div>\n  (Session info: headless chrome=88.0.4324.104)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'LAPTOP-RIANQ4LQ', ip: '26.155.20.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.104, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\\Users\\ADMIN\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 1878b4cd0dad5be286056d04a31edf37",
       "time" : {
-        "start" : 1610600325500,
-        "stop" : 1610600328007,
-        "duration" : 2507
+        "start" : 1612154511386,
+        "stop" : 1612154511387,
+        "duration" : 1
       }
     } ]
   },
-  "c7f79965dc716130ee6926805968dd2e" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "5b59d2437323cd1e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1610600475838,
-        "stop" : 1610600488691,
-        "duration" : 12853
-      }
-    } ]
-  },
-  "7989835a9e01dc4d7642b1a4fe15a782" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "d6a8e9e94d60622a",
-      "status" : "passed",
-      "time" : {
-        "start" : 1610600508689,
-        "stop" : 1610600509004,
-        "duration" : 315
-      }
-    } ]
-  },
-  "aac500ce65be8d51413b9b330e78fccd" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "a7a652fe503f004c",
-      "status" : "passed",
-      "time" : {
-        "start" : 1610600328739,
-        "stop" : 1610600348713,
-        "duration" : 19974
-      }
-    } ]
-  },
-  "88e0d8a6a314d0240b45d48c0ec96925" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "668543f633e9dfde",
-      "status" : "passed",
-      "time" : {
-        "start" : 1610600428340,
-        "stop" : 1610600439121,
-        "duration" : 10781
-      }
-    } ]
-  },
-  "2f8971b61e8eb738822e985ba2595998" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "1caccb6711c02ea3",
-      "status" : "passed",
-      "time" : {
-        "start" : 1610600440369,
-        "stop" : 1610600451232,
-        "duration" : 10863
-      }
-    } ]
-  },
-  "dbc68959acdf9ca473ee7adafd67d42d" : {
+  "b48a5a1d9a15f1294816332f2900bddc" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 1,
@@ -123,51 +29,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "4885a7ad40b558c8",
+      "uid" : "971adaf26577e1a2",
       "status" : "broken",
-      "statusDetails" : "invalid session id\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'LAPTOP-RIANQ4LQ', ip: '26.155.20.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\\Users\\ADMIN\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 37a13cc736e02d3228eb01f786e6b666",
+      "statusDetails" : "element click intercepted: Element <button class=\"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary\" tabindex=\"0\" type=\"submit\">...</button> is not clickable at point (1144, 660). Other element would receive the click: <div aria-hidden=\"true\" style=\"z-index: -1; position: fixed; inset: 0px; background-color: transparent; -webkit-tap-highlight-color: transparent;\"></div>\n  (Session info: headless chrome=88.0.4324.104)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'LAPTOP-RIANQ4LQ', ip: '26.155.20.68', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.104, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\\Users\\ADMIN\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 1878b4cd0dad5be286056d04a31edf37",
       "time" : {
-        "start" : 1610600520031,
-        "stop" : 1610600520031,
-        "duration" : 0
-      }
-    } ]
-  },
-  "6d003ff5cedabbd5e3ef23bb0347ca8a" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "71461bceebfd9bad",
-      "status" : "passed",
-      "time" : {
-        "start" : 1610600471641,
-        "stop" : 1610600471677,
-        "duration" : 36
-      }
-    } ]
-  },
-  "d74338561cbeb01f4e936debe3117607" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "1f33f0cc25d3f5dc",
-      "status" : "passed",
-      "time" : {
-        "start" : 1610600472792,
-        "stop" : 1610600474347,
-        "duration" : 1555
+        "start" : 1612154511245,
+        "stop" : 1612154511247,
+        "duration" : 2
       }
     } ]
   }

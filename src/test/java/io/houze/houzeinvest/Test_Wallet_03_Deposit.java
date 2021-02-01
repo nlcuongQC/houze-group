@@ -79,10 +79,10 @@ public class Test_Wallet_03_Deposit extends AbstractTest {
                   .verifyBankAccountNameDepositPopupEqualTo(depositBank)
                   .verifyBankAccountAmountDepositPopupEqualTo(convertMoneyAmount(depositAmount));
 
-        loginAdminPage = getLoginAdminPageObject(driver);
+        loginAdminPage = getLoginAdminPage(driver);
         loginAdminPage.navigateToPage().loginToAdmin();
 
-        baseAdminPage = getBaseAdminPageObject(driver);
+        baseAdminPage = getBaseAdminPage(driver);
         baseAdminPage.clickToNotificationButton().clickToTransactionLink();
 
         transactionOrderPage = getTransactionOrderPage(driver);

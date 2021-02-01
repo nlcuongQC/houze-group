@@ -10,7 +10,7 @@ import pageobjects.houzeinvest.investor.WalletPageObject;
 
 import static commons.PageGeneratorManager.HouzeInvest.getWalletPage;
 
-public class Common_03_Create_Bank extends AbstractTest {
+public class Common_04_Create_Bank extends AbstractTest {
     public static String bankAccount, bankName;
     WebDriver        driver;
     DataHelper       data;

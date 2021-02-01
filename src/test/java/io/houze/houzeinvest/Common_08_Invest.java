@@ -9,7 +9,7 @@ import pageobjects.houzeinvest.investor.*;
 
 import static commons.PageGeneratorManager.HouzeInvest.*;
 
-public class Common_07_Invest extends AbstractTest {
+public class Common_08_Invest extends AbstractTest {
     static int profit, hybrid, fixed;
     WebDriver driver;
     BasePageObject          basePage;
@@ -28,7 +28,7 @@ public class Common_07_Invest extends AbstractTest {
         basePage = getBasePageObject(driver);
         basePage.verifyLoginButtonIsDisplayed();
 
-        projectName = Common_05_Create_Project.prjName;
+        projectName = Common_06_Create_Project.prjName;
         profit      = 1;
         hybrid      = 1;
         fixed       = 1;

@@ -15,9 +15,10 @@ public class TradingSellPageObject extends AbstractPage {
         verify      = VerifyHelper.getVerify(driver);
     }
 
-    public void verifyTradingSellPageIsOpened() {
+    public TradingSellPageObject verifyTradingSellPageIsOpened() {
         waitElementVisible(driver, TITLE);
-        verify.verifyTrue(isElementDisplayed(driver, TITLE));
+        verify.verifyEquals(getElementText(driver, TITLE), "Đăng tin Bán");
+        return this;
     }
 
     public TradingSellPageObject choosePrj(String prjName) {
@@ -52,12 +53,23 @@ public class TradingSellPageObject extends AbstractPage {
     }
 
     public TradingSellPageObject clickToCreatePostSellBtn() {
-        waitElementClickable(driver,CREATE_POST_SELL_BTN);
-        clickToElement(driver,CREATE_POST_SELL_BTN);
+        waitElementClickable(driver, CREATE_POST_SELL_BTN);
+        clickToElement(driver, CREATE_POST_SELL_BTN);
         return this;
     }
 
     public void verifyDynamicPopupIsDisplayed(String result) {
         verify.verifyTrue(isElementDisplayed(driver, DYNAMIC_POPUP, result));
     }
+
+    public void postSell(String prjName, String itemType, String amount, String price) {
+        choosePrj(prjName);
+        chooseItemType(itemType);
+        inputToItemAmountTxtbx(amount);
+        inputToExpectedPrice(price);
+        clickToCreatePostSellBtn();
+        verifyDynamicPopupIsDisplayed("thành công");
+    }
+
+
 }

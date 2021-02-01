@@ -39,11 +39,11 @@ public class PageGeneratorManager {
             return new ProfilePageObject(driver);
         }
 
-        public static LoginAdminPageObject getLoginAdminPageObject(WebDriver driver) {
+        public static LoginAdminPageObject getLoginAdminPage(WebDriver driver) {
             return new LoginAdminPageObject(driver);
         }
 
-        public static BaseAdminPageObject getBaseAdminPageObject(WebDriver driver) {
+        public static BaseAdminPageObject getBaseAdminPage(WebDriver driver) {
             return new BaseAdminPageObject(driver);
         }
 
@@ -81,6 +81,14 @@ public class PageGeneratorManager {
 
         public static PropertyDetailPageObject getPropertyDetailPage(WebDriver driver) {
             return new PropertyDetailPageObject(driver);
+        }
+
+        public static PaymentOrderPageObject getPaymentOrderPage(WebDriver driver) {
+            return new PaymentOrderPageObject(driver);
+        }
+
+        public static PollPageObject getPollPage(WebDriver driver) {
+            return new PollPageObject(driver);
         }
     }
 

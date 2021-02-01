@@ -1,6 +1,4 @@
 
-i
-9src/test/java/io/houze/houzeinvest/Common_04_Deposit.java,5\e\5e24c1e18d1513d2924a81cc4744e0a2cda150fa
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 T
@@ -21,8 +19,6 @@ j
 :src/test/java/io/houze/houzeinvest/Common_01_Register.java,6\b\6b553359daaef1dc3be694afc142f2a4fe22676c
 u
 Esrc/main/java/pageobjects/houzeinvest/admin/LoginAdminPageObject.java,6\3\6358aa6f64e7ebb1f72e0583ceed77d3a4dcb2cd
-r
-Bsrc/test/java/io/houze/houzeinvest/Common_02_Verify_With_EKYC.java,a\3\a36f992aff6572fe57cf506d2c18b070ec0066f9
 l
 <src/test/java/io/houze/houzeinvest/Test_Profile_01_EKYC.java,0\e\0e37149321182dca9c2ea86574ea81a1fc4bab9c
 t
@@ -61,8 +57,6 @@ Y
 )src/main/java/commons/MethodListener.java,f\0\f0e09f0a59f947407f404d451953e9b443187875
 u
 Esrc/main/java/pageobjects/houzeinvest/investor/AccountPageObject.java,0\d\0da05cd9b6813f02dd844dd137f4934617b3b2ab
-m
-=src/test/java/io/houze/houzeinvest/Common_03_Create_Bank.java,5\1\517e180c8816ac87865a1d793f9f18d40bce7fef
 W
 'src/main/java/commons/VerifyHelper.java,0\1\0179a63b91d288384ab2f3832d3819ead9e611bc
 W
@@ -120,3 +114,19 @@ y
 Isrc/main/java/pageobjects/houzeinvest/admin/PropertyDetailPageObject.java,9\1\917743107ce74fced369c50ee6f75bd1ffd1d603
 q
 Asrc/main/java/pageuis/houzeinvest/admin/PropertyDetailPageUI.java,4\f\4f70e886fdfab894567e760d9f618c953c121f12
+h
+8src/test/java/io/houze/houzeinvest/Common_08_Invest.java,a\a\aa74f432aff3930e7ed13ca1c4886b6a2cbddc9b
+u
+Esrc/main/java/pageobjects/houzeinvest/investor/TradingPageObject.java,1\c\1c77a39668a539da3a5c6d875b00eea3655ba472
+ƒ
+Ssrc/test/java/io/houze/houzeinvest/Common_02_Register_Account_With_A_Post_Sell.java,c\5\c54b98c8149063b7ddc8601ebfb325c5b4e89223
+p
+@src/test/java/io/houze/houzeinvest/Test_Trading_03_Buy_Item.java,9\7\977696617e310683c5a533c551eed4c5fe354c30
+l
+<src/main/java/pageuis/houzeinvest/admin/BaseAdminPageUI.java,9\8\98d832a26cd6d5142e06059d8e3b7cdd53314245
+o
+?src/main/java/pageobjects/houzeinvest/admin/PollPageObject.java,f\c\fcd80c639d6b5da2c2ed5fd76bd8335278076ce4
+g
+7src/main/java/pageuis/houzeinvest/admin/PollPageUI.java,2\4\24ce5ebe55648ba72f821e886ca37cfa8c365389
+k
+;src/test/java/io/houze/houzeinvest/Test_Poll_01_Create.java,f\6\f6c0a0c67c2572520a384033c30ca8fb95ca7984

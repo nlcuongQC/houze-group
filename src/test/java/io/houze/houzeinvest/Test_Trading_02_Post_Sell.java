@@ -5,9 +5,7 @@ import commons.DataHelper;
 import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import pageobjects.houzeinvest.admin.LoginAdminPageObject;
-import pageobjects.houzeinvest.admin.PropertyDetailPageObject;
-import pageobjects.houzeinvest.admin.PropertyPageObject;
+import pageobjects.houzeinvest.admin.*;
 import pageobjects.houzeinvest.investor.BasePageObject;
 import pageobjects.houzeinvest.investor.TradingPageObject;
 import pageobjects.houzeinvest.investor.TradingSellPageObject;
@@ -20,7 +18,7 @@ import static commons.PageGeneratorManager.HouzeInvest.*;
 public class Test_Trading_02_Post_Sell extends AbstractTest {
     WebDriver  driver;
     DataHelper data;
-    String     prjName;
+    String     prjName, itemCode;
 
     BasePageObject           basePage;
     TradingPageObject        tradingPage;
@@ -28,6 +26,8 @@ public class Test_Trading_02_Post_Sell extends AbstractTest {
     LoginAdminPageObject     loginAdminPage;
     PropertyPageObject       propertyPage;
     PropertyDetailPageObject propertyDetailPage;
+    BaseAdminPageObject      baseAdminPage;
+    PaymentOrderPageObject   paymentOrderPage;
 
     @Parameters({"browser", "url"})
     @BeforeClass(groups = "smoke", description = "Login with an invested account")
@@ -35,7 +35,8 @@ public class Test_Trading_02_Post_Sell extends AbstractTest {
         data   = DataHelper.getData();
         driver = getBrowserDriver(browserName, appUrl);
 
-        prjName = Common_05_Create_Project.prjName;
+        prjName  = Common_06_Create_Project.prjName;
+        itemCode = Common_06_Create_Project.prjCode;
 
         basePage = getBasePageObject(driver);
         basePage.loginToAnAccount(Common_01_Register.phone, Common_01_Register.password);
@@ -52,7 +53,7 @@ public class Test_Trading_02_Post_Sell extends AbstractTest {
 
     @AfterClass(alwaysRun = true, description = "Close Browser")
     public void afterClass() {
-        loginAdminPage = getLoginAdminPageObject(driver);
+        loginAdminPage = getLoginAdminPage(driver);
         loginAdminPage.navigateToPage().loginToAdmin();
 
         propertyPage = getPropertyPage(driver);
@@ -60,6 +61,15 @@ public class Test_Trading_02_Post_Sell extends AbstractTest {
 
         propertyDetailPage = getPropertyDetailPage(driver);
         propertyDetailPage.finishPrj().verifyPropertyStatusEqualTo("Hoàn tất đầu tư");
+
+        baseAdminPage = getBaseAdminPage(driver);
+        baseAdminPage.clickToDynamicMenu("Lệnh thanh toán");
+
+        paymentOrderPage = getPaymentOrderPage(driver);
+        paymentOrderPage.createPaymentOrder("Hoàn vốn", itemCode + ".P", "100", "30")
+                        .createPaymentOrder("Hoàn vốn", itemCode + ".H", "100", "30")
+                        .createPaymentOrder("Hoàn vốn", itemCode + ".F", "100", "30");
+
         closeBrowserAndDriver(driver);
     }
 

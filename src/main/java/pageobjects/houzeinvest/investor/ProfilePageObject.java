@@ -124,7 +124,7 @@ public class ProfilePageObject extends AbstractPage {
     @Step("Click Verify submit button")
     public ProfilePageObject clickToVerifySubmitButton() {
         waitElementVisible(driver, VERIFY_SUBMIT_BUTTON);
-        clickToElement(driver, VERIFY_SUBMIT_BUTTON);
+        clickToElementByJS(driver, VERIFY_SUBMIT_BUTTON);
         return this;
     }
 
@@ -409,5 +409,22 @@ public class ProfilePageObject extends AbstractPage {
     public void verifyChangePwBtnIsDisplayed() {
         waitElementVisible(driver, CHANGE_PW_BTN);
         verify.verifyTrue(isElementDisplayed(driver, CHANGE_PW_BTN));
+    }
+
+    public void requestEkyc(String name, String address, String fullAddress) {
+        clickToBeginVerifyButton();
+        inputToVerifyNameTextbox(name);
+        chooseGenderDropdown("Nam");
+        inputToAddressTextbox(address);
+        inputToFullAddressTextbox(fullAddress);
+        inputToIssuePlaceTextbox("TPHCM");
+        inputToIssueNumberTextbox("025344555");
+        uploadFrontIssueImage("imageA.jpg");
+        uploadBackIssueImage("imageB.jpg");
+        verifyVerifySubmitBtnEnabled();
+        clickToVerifySubmitButton();
+        verifyVerifyPopupTitleEqualTo("Đã gửi xác thực");
+        clickToVerifyPopupDoneButton();
+        verifyStatusProfileEqualTo("Đang chờ kết quả");
     }
 }

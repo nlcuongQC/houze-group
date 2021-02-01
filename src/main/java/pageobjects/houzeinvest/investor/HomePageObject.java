@@ -19,7 +19,8 @@ public class HomePageObject extends AbstractPage {
     }
 
     @Step("Go to homepage")
-    public void navigateToHomepage() {
+    public HomePageObject navigateToHomepage() {
         openPageUrl(driver, "https://integration-houze-invest.houze.io/");
+        return this;
     }
 }

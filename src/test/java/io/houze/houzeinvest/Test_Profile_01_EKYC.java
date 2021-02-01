@@ -96,13 +96,13 @@ public class Test_Profile_01_EKYC extends AbstractTest {
                    .clickToVerifyPopupDoneButton()
                    .verifyStatusProfileEqualTo(inprogressStatus);
 
-        loginAdminPage = PageGeneratorManager.HouzeInvest.getLoginAdminPageObject(driver);
+        loginAdminPage = PageGeneratorManager.HouzeInvest.getLoginAdminPage(driver);
         loginAdminPage.navigateToPage();
         loginAdminPage.inputToUsernameTextbox(GlobalConstants.USERNAME_ADMIN_HI);
         loginAdminPage.inputToPasswordTextbox(GlobalConstants.PASSWORD_ADMIN_HI);
         loginAdminPage.clickToLoginButton();
 
-        baseAdminPage = PageGeneratorManager.HouzeInvest.getBaseAdminPageObject(driver);
+        baseAdminPage = PageGeneratorManager.HouzeInvest.getBaseAdminPage(driver);
         baseAdminPage.clickToNotificationButton().clickToEKYCLink();
 
         customerAdminPage = PageGeneratorManager.HouzeInvest.getCustomerAdminPage(driver);
@@ -146,7 +146,7 @@ public class Test_Profile_01_EKYC extends AbstractTest {
                    .clickToVerifyPopupDoneButton()
                    .verifyStatusProfileEqualTo(inprogressStatus);
 
-        baseAdminPage = PageGeneratorManager.HouzeInvest.getBaseAdminPageObject(driver);
+        baseAdminPage = PageGeneratorManager.HouzeInvest.getBaseAdminPage(driver);
         baseAdminPage.navigateToPage().clickToNotificationButton().clickToEKYCLink();
 
         customerAdminPage = PageGeneratorManager.HouzeInvest.getCustomerAdminPage(driver);

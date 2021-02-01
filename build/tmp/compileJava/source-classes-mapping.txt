@@ -1,5 +1,7 @@
-pageuis/houzeinvest/admin/TransactionOrderPageUI.java
- pageuis.houzeinvest.admin.TransactionOrderPageUI
+commons/MethodListener.java
+ commons.MethodListener
+pageuis/houzeinvest/admin/PaymentOrderPageUI.java
+ pageuis.houzeinvest.admin.PaymentOrderPageUI
 commons/GlobalConstants.java
  commons.GlobalConstants
 commons/AbstractPageUI.java
@@ -8,14 +10,14 @@ commons/Functions.java
  commons.Functions
 pageuis/houzeinvest/admin/PropertyDetailPageUI.java
  pageuis.houzeinvest.admin.PropertyDetailPageUI
-commons/VerificationFailures.java
- commons.VerificationFailures
-pageuis/houzeinvest/investor/ProjectPageUI.java
- pageuis.houzeinvest.investor.ProjectPageUI
-pageuis/houzeinvest/investor/TradingBuyPageUI.java
- pageuis.houzeinvest.investor.TradingBuyPageUI
-pageuis/houzeinvest/admin/BaseAdminPageUI.java
- pageuis.houzeinvest.admin.BaseAdminPageUI
+commons/VerifyHelper.java
+ commons.VerifyHelper
+pageuis/houzeinvest/admin/PropertyPageUI.java
+ pageuis.houzeinvest.admin.PropertyPageUI
+pageuis/houzeinvest/investor/ProjectDetailPageUI.java
+ pageuis.houzeinvest.investor.ProjectDetailPageUI
+pageuis/houzeinvest/admin/TransactionOrderPageUI.java
+ pageuis.houzeinvest.admin.TransactionOrderPageUI
 commons/DataHelper.java
  commons.DataHelper
 pageuis/houzeinvest/investor/PortfolioPageUI.java
@@ -26,60 +28,52 @@ pageuis/houze/LoginPageUI.java
  pageuis.houze.LoginPageUI
 pageuis/houzeinvest/investor/ProfilePageUI.java
  pageuis.houzeinvest.investor.ProfilePageUI
+pageuis/houzeinvest/admin/BaseAdminPageUI.java
+ pageuis.houzeinvest.admin.BaseAdminPageUI
 pageuis/houzeinvest/investor/AccountPageUI.java
  pageuis.houzeinvest.investor.AccountPageUI
 pageuis/houzeinvest/investor/TradingPageUI.java
  pageuis.houzeinvest.investor.TradingPageUI
 pageuis/houze/BasePageUI.java
  pageuis.houze.BasePageUI
-pageuis/houzeinvest/investor/ProjectDetailPageUI.java
- pageuis.houzeinvest.investor.ProjectDetailPageUI
-reportconfig/AllureTestListener.java
- reportconfig.AllureTestListener
+pageuis/houzeinvest/investor/TradingBuyPageUI.java
+ pageuis.houzeinvest.investor.TradingBuyPageUI
 pageuis/houzeinvest/investor/CheckoutPageUI.java
  pageuis.houzeinvest.investor.CheckoutPageUI
+reportconfig/AllureTestListener.java
+ reportconfig.AllureTestListener
 commons/Browser.java
  commons.Browser
 commons/main.java
  commons.main
-commons/VerifyHelper.java
- commons.VerifyHelper
 pageuis/houzeinvest/admin/CustomerDetailPageUI.java
  pageuis.houzeinvest.admin.CustomerDetailPageUI
-commons/MethodListener.java
- commons.MethodListener
+pageuis/houzeinvest/investor/BasePageUI.java
+ pageuis.houzeinvest.investor.BasePageUI
+pageuis/houzeinvest/admin/CustomerPageUI.java
+ pageuis.houzeinvest.admin.CustomerPageUI
 pageuis/houzeinvest/investor/WalletPageUI.java
  pageuis.houzeinvest.investor.WalletPageUI
 pageuis/houzeinvest/investor/TradingSellPageUI.java
  pageuis.houzeinvest.investor.TradingSellPageUI
-pageuis/houzeinvest/admin/CustomerPageUI.java
- pageuis.houzeinvest.admin.CustomerPageUI
-pageuis/houzeinvest/investor/LoginAdminPageUI.java
- pageuis.houzeinvest.investor.LoginAdminPageUI
-pageuis/houzeinvest/investor/BasePageUI.java
- pageuis.houzeinvest.investor.BasePageUI
-pageuis/houzeinvest/admin/PropertyPageUI.java
- pageuis.houzeinvest.admin.PropertyPageUI
 pageuis/houzeinvest/investor/HomePageUI.java
  pageuis.houzeinvest.investor.HomePageUI
+pageuis/houzeinvest/investor/LoginAdminPageUI.java
+ pageuis.houzeinvest.investor.LoginAdminPageUI
+pageuis/houzeinvest/investor/ProjectPageUI.java
+ pageuis.houzeinvest.investor.ProjectPageUI
+commons/VerificationFailures.java
+ commons.VerificationFailures
 pageobjects/houzeinvest/investor/PortfolioPageObject.java
  pageobjects.houzeinvest.investor.PortfolioPageObject
 pageobjects/houzeinvest/investor/HomePageObject.java
  pageobjects.houzeinvest.investor.HomePageObject
-pageobjects/houzeinvest/admin/CustomerPageObject.java
- pageobjects.houzeinvest.admin.CustomerPageObject
-pageobjects/houzeinvest/investor/CheckoutPageObject.java
- pageobjects.houzeinvest.investor.CheckoutPageObject
-pageobjects/houzeinvest/investor/TradingPageObject.java
- pageobjects.houzeinvest.investor.TradingPageObject
-pageobjects/houzeinvest/investor/TradingBuyPageObject.java
- pageobjects.houzeinvest.investor.TradingBuyPageObject
 pageobjects/houzeinvest/admin/PropertyPageObject.java
  pageobjects.houzeinvest.admin.PropertyPageObject
+pageobjects/houzeinvest/investor/TradingPageObject.java
+ pageobjects.houzeinvest.investor.TradingPageObject
 pageobjects/houzeinvest/admin/TransactionOrderPageObject.java
  pageobjects.houzeinvest.admin.TransactionOrderPageObject
-pageobjects/houze/LoginPageObject.java
- pageobjects.houze.LoginPageObject
 pageobjects/houzeinvest/investor/TradingSellPageObject.java
  pageobjects.houzeinvest.investor.TradingSellPageObject
 pageobjects/houzeinvest/admin/LoginAdminPageObject.java
@@ -88,25 +82,39 @@ pageobjects/houzeinvest/investor/ProjectPageObject.java
  pageobjects.houzeinvest.investor.ProjectPageObject
 pageobjects/houzeinvest/investor/ProjectDetailPageObject.java
  pageobjects.houzeinvest.investor.ProjectDetailPageObject
-pageobjects/houzeinvest/investor/ProfilePageObject.java
- pageobjects.houzeinvest.investor.ProfilePageObject
 pageobjects/houzeinvest/admin/BaseAdminPageObject.java
  pageobjects.houzeinvest.admin.BaseAdminPageObject
 pageobjects/houzeinvest/admin/PropertyDetailPageObject.java
  pageobjects.houzeinvest.admin.PropertyDetailPageObject
+pageobjects/houzeinvest/admin/PaymentOrderPageObject.java
+ pageobjects.houzeinvest.admin.PaymentOrderPageObject
+pageobjects/houzeinvest/admin/CustomerDetailPageObject.java
+ pageobjects.houzeinvest.admin.CustomerDetailPageObject
+pageuis/houzeinvest/admin/PollPageUI.java
+ pageuis.houzeinvest.admin.PollPageUI
+pageobjects/houzeinvest/admin/CustomerPageObject.java
+ pageobjects.houzeinvest.admin.CustomerPageObject
+pageobjects/houzeinvest/investor/CheckoutPageObject.java
+ pageobjects.houzeinvest.investor.CheckoutPageObject
+pageobjects/houzeinvest/investor/TradingBuyPageObject.java
+ pageobjects.houzeinvest.investor.TradingBuyPageObject
+pageobjects/houzeinvest/investor/BasePageObject.java
+ pageobjects.houzeinvest.investor.BasePageObject
+pageobjects/houze/LoginPageObject.java
+ pageobjects.houze.LoginPageObject
+pageobjects/houzeinvest/investor/ProfilePageObject.java
+ pageobjects.houzeinvest.investor.ProfilePageObject
 pageobjects/houze/BasePageObject.java
  pageobjects.houze.BasePageObject
-commons/PageGeneratorManager.java
- commons.PageGeneratorManager
- commons.PageGeneratorManager$Houze
- commons.PageGeneratorManager$HouzeInvest
+pageobjects/houzeinvest/investor/AccountPageObject.java
+ pageobjects.houzeinvest.investor.AccountPageObject
 commons/AbstractPage.java
  commons.AbstractPage
 pageobjects/houzeinvest/investor/WalletPageObject.java
  pageobjects.houzeinvest.investor.WalletPageObject
-pageobjects/houzeinvest/investor/AccountPageObject.java
- pageobjects.houzeinvest.investor.AccountPageObject
-pageobjects/houzeinvest/investor/BasePageObject.java
- pageobjects.houzeinvest.investor.BasePageObject
-pageobjects/houzeinvest/admin/CustomerDetailPageObject.java
- pageobjects.houzeinvest.admin.CustomerDetailPageObject
+pageobjects/houzeinvest/admin/PollPageObject.java
+ pageobjects.houzeinvest.admin.PollPageObject
+commons/PageGeneratorManager.java
+ commons.PageGeneratorManager
+ commons.PageGeneratorManager$Houze
+ commons.PageGeneratorManager$HouzeInvest

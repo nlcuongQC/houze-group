@@ -54,8 +54,8 @@ public class Test_Wallet_02_Delete_Bank extends AbstractTest {
     public void TC_01_Click_Back_In_Delete_Form() {
         walletPage.clickToDeleteBankBackBtn()
                   .verifyDeleteBankFormIsDisappeared()
-                  .verifyBankInfoEqualTo(Common_03_Create_Bank.bankName, Common_01_Register.name,
-                                         Common_03_Create_Bank.bankAccount);
+                  .verifyBankInfoEqualTo(Common_04_Create_Bank.bankName, Common_01_Register.name,
+                                         Common_04_Create_Bank.bankAccount);
     }
 
     @Severity(SeverityLevel.NORMAL)

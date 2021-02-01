@@ -27,33 +27,29 @@ public class BasePageObject extends AbstractPage {
     }
 
     @Step("Click to Submit Login button")
-    public BasePageObject clickToSubmitLoginButton() {
+    public void clickToSubmitLoginButton() {
         waitElementClickable(driver, SUBMIT_LOGIN_BUTTON);
         clickToElement(driver, SUBMIT_LOGIN_BUTTON);
-        return this;
     }
 
     @Step("Click to Login button")
-    public BasePageObject clickToLoginButton() {
+    public void clickToLoginButton() {
         waitElementClickable(driver, LOGIN_BUTTON);
         clickToElement(driver, LOGIN_BUTTON);
-        return this;
     }
 
     @Step("Input to Login phone textbox")
-    public BasePageObject inputToPhoneTextbox(String phone) {
+    public void inputToPhoneTextbox(String phone) {
         waitElementVisible(driver, PHONE_TEXTBOX);
         sendkeyToElement(driver, PHONE_TEXTBOX, phone);
         verify.verifyTrue(getValuePhoneTextbox().equals(phone));
-        return this;
     }
 
     @Step("Input password with: {password}")
-    public BasePageObject inputToPasswordTextbox(String password) {
+    public void inputToPasswordTextbox(String password) {
         waitElementVisible(driver, PASSWORD_TEXTBOX);
         sendkeyToElement(driver, PASSWORD_TEXTBOX, password);
         verify.verifyTrue(getValuePasswordTextbox().equals(password));
-        return this;
     }
 
     private Object getValuePhoneTextbox() {
@@ -62,14 +58,6 @@ public class BasePageObject extends AbstractPage {
 
     private Object getValuePasswordTextbox() {
         return getElementAttribute(driver, PASSWORD_TEXTBOX, "value");
-    }
-
-    public boolean isLoginButtonUndisplayed() {
-        return isElementUndisplayed(driver, LOGIN_BUTTON);
-    }
-
-    public Object getAlertMessage() {
-        return getElementText(driver, ALERT_MESSAGE);
     }
 
 
@@ -218,6 +206,20 @@ public class BasePageObject extends AbstractPage {
     @Step("Verify Email error: {0}")
     public BasePageObject verifyEmailErrorEqualTo(String value) {
         verify.verifyEquals(getEmailErrorText(), value);
+        return this;
+    }
+
+    public BasePageObject registerAccount(String name, String phone, String email, String password) {
+        clickToRegisterButton();
+        inputToRegisterNameTextbox(name);
+        inputToRegisterPhoneTextbox(phone);
+        inputToRegisterEmailTextbox(email);
+        inputToRegisterPasswordTextbox(password);
+        checkToConditionCheckbox();
+        verifyRegisterSubmitButtonIsEnabled();
+        clickToSubmitRegisterButton();
+        inputToOTPTextbox(123456);
+        verifyOTPIsDisappeared();
         return this;
     }
 }

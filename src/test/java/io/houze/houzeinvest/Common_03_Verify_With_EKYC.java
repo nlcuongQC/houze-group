@@ -19,7 +19,7 @@ import pageobjects.houzeinvest.investor.ProfilePageObject;
 
 import static commons.PageGeneratorManager.HouzeInvest.*;
 
-public class Common_02_Verify_With_EKYC extends AbstractTest {
+public class Common_03_Verify_With_EKYC extends AbstractTest {
     public static String gender, birthday, successPopupMessage, inprogressStatus, address, fullAddress, issueDate,
             issuePlace, issueNumber, imageFront, imageBack;
     WebDriver                driver;
@@ -74,13 +74,13 @@ public class Common_02_Verify_With_EKYC extends AbstractTest {
                    .clickToVerifyPopupDoneButton()
                    .verifyStatusProfileEqualTo(inprogressStatus);
 
-        loginAdminPage = PageGeneratorManager.HouzeInvest.getLoginAdminPageObject(driver);
+        loginAdminPage = PageGeneratorManager.HouzeInvest.getLoginAdminPage(driver);
         loginAdminPage.navigateToPage()
                       .inputToUsernameTextbox(GlobalConstants.USERNAME_ADMIN_HI)
                       .inputToPasswordTextbox(GlobalConstants.PASSWORD_ADMIN_HI)
                       .clickToLoginButton();
 
-        baseAdminPage = getBaseAdminPageObject(driver);
+        baseAdminPage = getBaseAdminPage(driver);
         baseAdminPage.clickToNotificationButton();
 
         baseAdminPage.clickToEKYCLink();

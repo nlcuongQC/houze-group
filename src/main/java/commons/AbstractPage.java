@@ -133,7 +133,17 @@ public abstract class AbstractPage {
             find(driver, xpathValue).click();
         } catch (StaleElementReferenceException e) {
             find(driver, xpathValue).click();
+        } catch (ElementClickInterceptedException e) {
+            find(driver, xpathValue).click();
         }
+    }
+
+    protected void clickToElement(WebElement element) {
+        try {
+            element.click();
+        } catch (StaleElementReferenceException e) {
+            element.click();
+        };
     }
 
     protected void clickToElement(WebDriver driver, String xpathValue, String... values) {
@@ -145,8 +155,14 @@ public abstract class AbstractPage {
     }
 
     protected void sendkeyToElement(WebDriver driver, WebElement ele, String text) {
-        ele.clear();
-        ele.sendKeys(text);
+        try {
+            clearText(driver, ele);
+            ele.sendKeys(text);
+        } catch (Exception e) {
+            e.printStackTrace();
+            functions = Functions.getFunctions(driver);
+            functions.saveScreenshot();
+        }
     }
 
     protected void sendkeyToElement(WebDriver driver, String xpathValue, String text) {
@@ -162,9 +178,15 @@ public abstract class AbstractPage {
     }
 
     protected void sendkeyToElement(WebDriver driver, String xpathValue, String text, String... values) {
-        element = find(driver, castToObject(xpathValue, values));
-        element.clear();
-        element.sendKeys(text);
+        try {
+            element = find(driver, castToObject(xpathValue, values));
+            clearText(driver, xpathValue, values);
+            element.sendKeys(text);
+        } catch (Exception e) {
+            e.printStackTrace();
+            functions = Functions.getFunctions(driver);
+            functions.saveScreenshot();
+        }
     }
 
     protected void selectInDropdownByText(WebDriver driver, String xpathValue, String itemValue) {
@@ -215,10 +237,31 @@ public abstract class AbstractPage {
             if (actualItem.equals(expectedItem)) {
                 js.executeScript("arguments[0]. scrollIntoView(true);", item);
                 wait.until(ExpectedConditions.elementToBeClickable(item));
-                item.click();
+                clickToElement(item);
                 break;
             }
         }
+
+    }
+
+    protected void selectItemsInCustomDropdownByJs(WebDriver driver, String parentLocator, String itemLocator,
+                                               String expectedItem) {
+        wait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+        waitElementClickable(driver, parentLocator);
+        clickToElement(driver, parentLocator);
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(byXpath(itemLocator)));
+        elements = finds(driver, itemLocator);
+        js       = (JavascriptExecutor) driver;
+        for (WebElement item : elements) {
+            String actualItem = item.getText();
+            if (actualItem.equals(expectedItem)) {
+                js.executeScript("arguments[0]. scrollIntoView(true);", item);
+                wait.until(ExpectedConditions.elementToBeClickable(item));
+                clickToElementByJS(driver,item);
+                break;
+            }
+        }
+
     }
 
     //    protected void  selectItemsInCustomDropdown(WebDriver driver, String parentLocator, String itemLocator,
@@ -602,7 +645,7 @@ public abstract class AbstractPage {
     }
 
     protected void waitElementsInvisible(WebDriver driver, String xpathValue) {
-        wait     = new WebDriverWait(driver, GlobalConstants.SHORT_TIMEOUT);
+        wait     = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
         elements = finds(driver, xpathValue);
         overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
         wait.until(invisibilityOfAllElements(elements));
@@ -611,7 +654,7 @@ public abstract class AbstractPage {
 
     protected void waitElementInvisible(WebDriver driver, String xpathValue) {
         try {
-            wait = new WebDriverWait(driver, GlobalConstants.SHORT_TIMEOUT);
+            wait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
             overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
             wait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(xpathValue)));
             overrideGlobalTimeout(driver, GlobalConstants.LONG_TIMEOUT);
@@ -622,7 +665,7 @@ public abstract class AbstractPage {
     }
 
     protected void waitElementInvisible(WebDriver driver, String xpathValue, String... values) {
-        wait = new WebDriverWait(driver, GlobalConstants.SHORT_TIMEOUT);
+        wait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
         overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(castToObject(xpathValue, values))));
         overrideGlobalTimeout(driver, GlobalConstants.LONG_TIMEOUT);
@@ -633,6 +676,18 @@ public abstract class AbstractPage {
             wait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
             overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
             wait.until(ExpectedConditions.textToBePresentInElementLocated(byXpath(xpathValue), text));
+            overrideGlobalTimeout(driver, GlobalConstants.LONG_TIMEOUT);
+        } catch (TimeoutException e) {
+            functions = Functions.getFunctions(driver);
+            functions.saveScreenshot();
+        }
+    }
+
+    protected void waitTextElementVisible(WebDriver driver, String xpathValue, String text, String... values) {
+        try {
+            wait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+            overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
+            wait.until(ExpectedConditions.textToBePresentInElementLocated(byXpath(castToObject(xpathValue, values)), text));
             overrideGlobalTimeout(driver, GlobalConstants.LONG_TIMEOUT);
         } catch (TimeoutException e) {
             functions = Functions.getFunctions(driver);
@@ -734,11 +789,35 @@ public abstract class AbstractPage {
     }
 
     protected void clearText(WebDriver driver, String xpathValue) {
-        element = find(driver, xpathValue);
+        try {
+            element = find(driver, xpathValue);
+            element.clear();
+            if (!element.getAttribute("value").equals("")) {
+                actions = new Actions(driver);
+                element.click();
+                actions.keyDown(LEFT_CONTROL).sendKeys("a").keyUp(LEFT_CONTROL).sendKeys(DELETE).perform();
+            }
+        } catch (ElementClickInterceptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    protected void clearText(WebDriver driver, String xpathValue, String... values) {
+        element = find(driver, castToObject(xpathValue, values));
         element.clear();
         if (!element.getAttribute("value").equals("")) {
             actions = new Actions(driver);
             element.click();
+            actions.keyDown(LEFT_CONTROL).sendKeys("a").keyUp(LEFT_CONTROL).sendKeys(DELETE).perform();
+        }
+    }
+
+    protected void clearText(WebDriver driver, WebElement ele) {
+        ele.clear();
+        if (!ele.getAttribute("value").equals("")) {
+            actions = new Actions(driver);
+            ele.click();
             actions.keyDown(LEFT_CONTROL).sendKeys("a").keyUp(LEFT_CONTROL).sendKeys(DELETE).perform();
         }
     }

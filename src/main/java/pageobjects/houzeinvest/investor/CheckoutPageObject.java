@@ -6,10 +6,11 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pageuis.houzeinvest.investor.CheckoutPageUI;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static pageuis.houzeinvest.investor.CheckoutPageUI.*;
 
 public class CheckoutPageObject extends AbstractPage {
     WebDriver    driver;
@@ -21,62 +22,69 @@ public class CheckoutPageObject extends AbstractPage {
     }
 
     private boolean isRequestLoginMessageDisplayed() {
-        return isElementDisplayed(driver, CheckoutPageUI.REQUEST_LOGIN_MESSAGE);
+        return isElementDisplayed(driver, REQUEST_LOGIN_MESSAGE);
     }
 
     private boolean isNextButtonDisabled() {
-        return getElementAttribute(driver, CheckoutPageUI.NEXT_BUTTON, "class").contains("undefined");
+        return getElementAttribute(driver, NEXT_BUTTON, "class").contains("undefined");
     }
 
     @Step("Input to {itemType} with: {value}")
     public CheckoutPageObject inputToDynamicItemTypeTextbox(String value, String itemType) {
-        waitElementVisible(driver, CheckoutPageUI.DYNAMIC_ITEMTYPE_TEXTBOX, itemType);
-        sendkeyToElement(driver, CheckoutPageUI.DYNAMIC_ITEMTYPE_TEXTBOX, value, itemType);
+        boolean flag = getElementAttribute(driver, DYNAMIC_ITEMTYPE_TEXTBOX, "value", itemType).equals(value);
+        while (!flag) {
+            waitElementVisible(driver, DYNAMIC_ITEMTYPE_TEXTBOX, itemType);
+            sendkeyToElement(driver, DYNAMIC_ITEMTYPE_TEXTBOX, value, itemType);
+            flag = getElementAttribute(driver, DYNAMIC_ITEMTYPE_TEXTBOX, "value", itemType).equals(value);
+        }
         return this;
     }
 
     private int getTotalItems() {
-        waitElementVisible(driver, CheckoutPageUI.TOTAL_ITEMS);
-        return Integer.parseInt(getElementText(driver, CheckoutPageUI.TOTAL_ITEMS));
+        waitElementVisible(driver, TOTAL_ITEMS);
+        return Integer.parseInt(getElementText(driver, TOTAL_ITEMS));
     }
 
     public int getDynamicPrice(String itemType) {
-        waitTextElementChanged(driver, CheckoutPageUI.DYNAMIC_ITEMTYPE_PRICE, "0 đ", itemType);
-        return getConvertPrice(driver, CheckoutPageUI.DYNAMIC_ITEMTYPE_PRICE, itemType);
+        waitTextElementChanged(driver, DYNAMIC_ITEMTYPE_PRICE, "0 đ", itemType);
+        return getConvertPrice(driver, DYNAMIC_ITEMTYPE_PRICE, itemType);
     }
 
     private int getTotalPrice() {
-        return getConvertPrice(driver, CheckoutPageUI.TOTAL_PRICE);
+        return getConvertPrice(driver, TOTAL_PRICE);
     }
 
     @Step("Click Next button")
     public CheckoutPageObject clickToNextButton() {
-        waitElementClickable(driver, CheckoutPageUI.NEXT_BUTTON);
-        clickToElementByJS(driver, CheckoutPageUI.NEXT_BUTTON);
+        waitElementClickable(driver, NEXT_BUTTON);
+        clickToElementByJS(driver, NEXT_BUTTON);
         return this;
     }
 
     private int getDynamicItemAmount(String itemType) {
-        waitElementVisible(driver, CheckoutPageUI.DYNAMIC_ITEM_AMOUNT, itemType);
-        String amount = getElementText(driver, CheckoutPageUI.DYNAMIC_ITEM_AMOUNT, itemType).substring(1);
+        waitElementVisible(driver, DYNAMIC_ITEM_AMOUNT, itemType);
+        String amount = getElementText(driver, DYNAMIC_ITEM_AMOUNT, itemType).substring(1);
         return Integer.parseInt(amount);
     }
 
     private int getDynamicItemPrice(String itemType) {
-        waitElementVisible(driver, CheckoutPageUI.DYNAMIC_CONFIRM_ITEMTYPE_PRICE, itemType);
-        return getConvertPrice(driver, CheckoutPageUI.DYNAMIC_CONFIRM_ITEMTYPE_PRICE, itemType);
+        waitElementVisible(driver, DYNAMIC_CONFIRM_ITEMTYPE_PRICE, itemType);
+        return getConvertPrice(driver, DYNAMIC_CONFIRM_ITEMTYPE_PRICE, itemType);
     }
 
     @Step("Check Contract checkbox")
     public CheckoutPageObject checkToContractCheckbox() {
-        checkTheCheckbox(driver, CheckoutPageUI.CONTRACT_CHECKBOX);
+        waitElementClickable(driver, CONTRACT_CHECKBOX);
+        scrollToElement(driver, CONTRACT_CHECKBOX);
+        waitElementClickable(driver, CONTRACT_CHECKBOX);
+        checkTheCheckbox(driver, CONTRACT_CHECKBOX);
         return this;
     }
 
     @Step("Input OTP")
     public CheckoutPageObject inputOTP(String otp) {
         List<String>     otpList   = Arrays.asList(otp.split(""));
-        List<WebElement> otpFields = finds(driver, CheckoutPageUI.OTP_TEXTBOXES);
+        List<WebElement> otpFields = finds(driver, OTP_TEXTBOXES);
 
         while (!otpFields.get(0).getAttribute("value").equals("")) {
             sendKeyboardToElement(driver, otpFields.get(0), Keys.BACK_SPACE);
@@ -89,32 +97,32 @@ public class CheckoutPageObject extends AbstractPage {
     }
 
     private boolean isSubmitButtonDisabled() {
-        waitElementVisible(driver, CheckoutPageUI.SUBMIT_INVEST_BUTTON);
-        return getElementAttribute(driver, CheckoutPageUI.SUBMIT_INVEST_BUTTON, "class").contains("undefined");
+        waitElementVisible(driver, SUBMIT_INVEST_BUTTON);
+        return getElementAttribute(driver, SUBMIT_INVEST_BUTTON, "class").contains("undefined");
     }
 
     @Step("Click Submit button")
     public CheckoutPageObject clickToSubmitButton() {
-        waitElementClickable(driver, CheckoutPageUI.SUBMIT_INVEST_BUTTON);
-        clickToElementByJS(driver, CheckoutPageUI.SUBMIT_INVEST_BUTTON);
+        waitElementClickable(driver, SUBMIT_INVEST_BUTTON);
+        clickToElementByJS(driver, SUBMIT_INVEST_BUTTON);
         return this;
     }
 
     @Step("Click View portfolio button")
     public void clickToViewPortfolioButton() {
-        waitElementClickable(driver, CheckoutPageUI.VIEW_PORTFOLIO_BUTTON);
-        clickToElement(driver, CheckoutPageUI.VIEW_PORTFOLIO_BUTTON);
+        waitElementClickable(driver, VIEW_PORTFOLIO_BUTTON);
+        clickToElement(driver, VIEW_PORTFOLIO_BUTTON);
     }
 
     private boolean isFailedPopupDisplayed() {
-        waitElementVisible(driver, CheckoutPageUI.POPUP_FAILED_INVEST_SUBMIT_TITLE);
-        return isElementDisplayed(driver, CheckoutPageUI.POPUP_FAILED_INVEST_SUBMIT_TITLE);
+        waitElementVisible(driver, POPUP_FAILED_INVEST_SUBMIT_TITLE);
+        return isElementDisplayed(driver, POPUP_FAILED_INVEST_SUBMIT_TITLE);
     }
 
     @Step("Click Do again button")
     public CheckoutPageObject clickToDoAgainButton() {
-        waitElementClickable(driver, CheckoutPageUI.DO_AGAIN_BUTTON);
-        clickToElement(driver, CheckoutPageUI.DO_AGAIN_BUTTON);
+        waitElementClickable(driver, DO_AGAIN_BUTTON);
+        clickToElement(driver, DO_AGAIN_BUTTON);
         return this;
     }
 
@@ -143,13 +151,13 @@ public class CheckoutPageObject extends AbstractPage {
 
     @Step("Verify {type} amount equal to {amount}")
     public CheckoutPageObject verifyDynamicItemAmount(String type, int amount) {
-        verify.verifyTrue(getDynamicItemAmount(type) == amount);
+        verify.verifyEquals(getDynamicItemAmount(type), amount);
         return this;
     }
 
     @Step("Verify {type} price equal to {price}")
     public CheckoutPageObject verifyDynamicItemPrice(String type, int price) {
-        verify.verifyTrue(getDynamicItemPrice(type) == price);
+        verify.verifyEquals(getDynamicItemPrice(type), price);
         return this;
     }
 
@@ -173,8 +181,11 @@ public class CheckoutPageObject extends AbstractPage {
 
     @Step("Verify successfully popup is displayed")
     public CheckoutPageObject verifySuccessfullyPopupIsDisplayed() {
-        waitElementVisible(driver, CheckoutPageUI.POPUP_INVEST_SUBMIT_TITLE);
-        verify.verifyTrue(isElementDisplayed(driver, CheckoutPageUI.POPUP_INVEST_SUBMIT_TITLE));
+        waitElementVisible(driver, POPUP_INVEST_SUBMIT_TITLE);
+        verify.verifyTrue(isElementDisplayed(driver, POPUP_INVEST_SUBMIT_TITLE));
         return this;
+    }
+
+    public void verifyNotEnoughPopupIsDisplayed() {
     }
 }

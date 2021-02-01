@@ -32,16 +32,7 @@ public class Common_01_Register extends AbstractTest {
         otp      = 123456;
 
         basePage = getBasePageObject(driver);
-        basePage.clickToRegisterButton()
-                .inputToRegisterNameTextbox(name)
-                .inputToRegisterPhoneTextbox(phone)
-                .inputToRegisterEmailTextbox(email)
-                .inputToRegisterPasswordTextbox(password)
-                .checkToConditionCheckbox()
-                .verifyRegisterSubmitButtonIsEnabled()
-                .clickToSubmitRegisterButton()
-                .inputToOTPTextbox(otp)
-                .verifyOTPIsDisappeared();
+        basePage.registerAccount(name, phone, email, password);
     }
 
     @AfterTest(alwaysRun = true, description = "Close browsers")

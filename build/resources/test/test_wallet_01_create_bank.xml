@@ -11,7 +11,7 @@
         <parameter name="url" value="https://integration-houze-invest.houze.io/"/>
         <classes>
             <class name="io.houze.houzeinvest.Common_01_Register"/>
-            <class name="io.houze.houzeinvest.Common_02_Verify_With_EKYC"/>
+            <class name="io.houze.houzeinvest.Common_03_Verify_With_EKYC"/>
             <class name="io.houze.houzeinvest.Test_Wallet_01_Create_Bank"/>
         </classes>
     </test>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Houze Invest - Trading">
+    <listeners>
+        <listener class-name="commons.MethodListener"/>
+        <listener class-name="reportconfig.AllureTestListener"/>
+    </listeners>
+
+    <test name="Trading sell function">
+        <parameter name="browser" value="headless"/>
+        <parameter name="url" value="https://integration-houze-invest.houze.io/"/>
+        <classes>
+            <class name="io.houze.houzeinvest.Common_12_Register_Account_Invested_Project"/>
+            <class name="io.houze.houzeinvest.Common_11_Register_Account_With_Money"/>
+            <class name="io.houze.houzeinvest.Common_13_Post_Buy"/>
+            <class name="io.houze.houzeinvest.Test_Trading_04_Sell_Item"/>
+        </classes>
+    </test>
+</suite>

@@ -13,7 +13,7 @@ import pageobjects.houzeinvest.admin.PropertyPageObject;
 
 import static commons.PageGeneratorManager.HouzeInvest.*;
 
-public class Common_08_Success_Project extends AbstractTest {
+public class Common_09_Success_Project extends AbstractTest {
     String     prjName;
     WebDriver  driver;
     DataHelper data;
@@ -26,13 +26,13 @@ public class Common_08_Success_Project extends AbstractTest {
     @Parameters({"browser", "url"})
     @BeforeTest(groups = "smoke", description = "Change status of property to success")
     public void beforeTest(String browserName, String appUrl) {
-        driver    = Common_05_Create_Project.driver;
+        driver    = Common_06_Create_Project.driver;
         data      = DataHelper.getData();
         functions = Functions.getFunctions(driver);
 
-        prjName = Common_05_Create_Project.prjName;
+        prjName = Common_06_Create_Project.prjName;
 
-        loginAdminPage = getLoginAdminPageObject(driver);
+        loginAdminPage = getLoginAdminPage(driver);
         loginAdminPage.navigateToPage();
 
         propertyPage = getPropertyPage(driver);

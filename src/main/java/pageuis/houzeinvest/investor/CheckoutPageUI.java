@@ -15,7 +15,7 @@ public class CheckoutPageUI {
     public static final String CONTRACT_CHECKBOX                = "//input[@name = 'checkedA']";
     public static final String OTP_TEXTBOXES                    = "//input[@type = 'tel']";
     public static final String SUBMIT_INVEST_BUTTON             = "//button[text() = 'Xác nhận']";
-    public static final String POPUP_INVEST_SUBMIT_TITLE        = "//div[text() = 'Đầu tư thành công!']";
+    public static final String POPUP_INVEST_SUBMIT_TITLE        = "//div[contains(text(), 'thành công'])";
     public static final String POPUP_FAILED_INVEST_SUBMIT_TITLE = "//div[text() = 'Mua chứng chỉ thất bại...']";
     public static final String VIEW_PORTFOLIO_BUTTON            = "//span[text() = 'Xem danh mục']/parent::button";
     public static final String DO_AGAIN_BUTTON                  = "//span[text() = 'Thực hiện lại']/parent::button";

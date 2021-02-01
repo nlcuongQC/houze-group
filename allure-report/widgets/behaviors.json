@@ -1,26 +1,15 @@
 {
   "total" : 2,
   "items" : [ {
-    "uid" : "6033690ece47e43742e0e4236a4aca4b",
-    "name" : "Wallet",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 2
-    }
-  }, {
-    "uid" : "02b27b9745995526f4e9815da8fad366",
-    "name" : "Invest",
+    "uid" : "552f6a788bd8129f7f5aae5dee42a4c6",
+    "name" : "Poll",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
-      "skipped" : 0,
-      "passed" : 2,
+      "skipped" : 1,
+      "passed" : 0,
       "unknown" : 0,
-      "total" : 2
+      "total" : 1
     }
   } ]
 }
